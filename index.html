@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Download CBE schemes of work for Kenyan schools. Instant payment, secure PDF delivery.">
+  <meta name="theme-color" content="#064e3b">
+  <title>SchemeVault | CBE Schemes of Work</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ----- YOUR ORIGINAL ELEGANT CSS (COMPLETELY UNCHANGED) ----- */
+    :root {
+      --primary: #059669;
+      --primary-dark: #064e3b;
+      --primary-light: #34d399;
+      --gold: #f59e0b;
+      --gold-dark: #d97706;
+      --gold-light: #fde047;
+      --navy: #0f172a;
+      --slate: #475569;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --success: #10b981;
+      --shadow: 0 4px 20px rgba(5, 150, 105, 0.15);
+      --shadow-lg: 0 10px 40px rgba(5, 150, 105, 0.25);
+      --radius: 1rem;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #f1f5f9; color: var(--navy); min-height: 100vh; overflow-x: hidden; line-height: 1.6; }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: white; padding: 0.5rem 1rem; z-index: 1000; text-decoration: none; font-weight: 600; border-radius: 0 0 0.5rem 0; }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.4); }
+    
+    .promo-banner {
+      background: linear-gradient(135deg, #1e3a5f, #2b4c7e);
+      color: white;
+      padding: 0.75rem;
+      text-align: center;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+      letter-spacing: 0.3px;
+    }
+    .promo-banner span { display: inline-block; animation: scrollText 20s linear infinite; }
+    @keyframes scrollText { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+    
+    .main-header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      padding: 3.5rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(6, 78, 59, 0.4);
+    }
+    .main-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 60%, rgba(52, 211, 153, 0.2) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 30%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      animation: headerGlow 8s ease-in-out infinite;
+    }
+    @keyframes headerGlow { 0%, 100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.1) rotate(5deg); } }
+    .header-content { position: relative; z-index: 1; max-width: 750px; margin: 0 auto; }
+    .curriculum-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.3); color: var(--gold-light);
+      font-size: 0.75rem; font-weight: 700; padding: 0.45rem 1.3rem;
+      border-radius: 3rem; letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 1.3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      animation: fadeInDown 0.7s ease both;
+    }
+    .curriculum-badge svg { width: 16px; height: 16px; fill: currentColor; }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-25px); } to { opacity: 1; transform: translateY(0); } }
+    .site-title {
+      font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 4.5rem);
+      font-weight: 900; color: var(--white); margin-bottom: 0.6rem;
+      letter-spacing: -0.02em; text-shadow: 0 4px 25px rgba(0,0,0,0.3);
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+    .site-title span { color: var(--gold); text-shadow: 0 4px 15px rgba(245, 158, 11, 0.4); }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(35px); } to { opacity: 1; transform: translateY(0); } }
+    .site-tagline { color: rgba(255,255,255,0.95); font-size: 1.1rem; font-weight: 500; margin-bottom: 2rem; animation: fadeInUp 0.8s ease 0.4s both; }
+    .header-divider { width: 100px; height: 4px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 2rem; border-radius: 2px; animation: expandWidth 1.2s ease 0.5s both; }
+    @keyframes expandWidth { from { width: 0; opacity: 0; } to { width: 100px; opacity: 1; } }
+    .hero-quote {
+      font-size: 1.05rem; color: rgba(255,255,255,0.9); line-height: 1.8; font-style: italic;
+      max-width: 600px; margin: 0 auto; position: relative; padding: 0 2rem;
+      animation: fadeInUp 0.8s ease 0.6s both;
+    }
+    .hero-quote::before { content: '"'; position: absolute; left: -0.5rem; top: -0.5rem; font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold); opacity: 0.3; line-height: 1; }
+    .hero-quote cite { display: block; font-style: normal; font-size: 0.9rem; color: var(--gold); margin-top: 1rem; font-weight: 700; letter-spacing: 0.03em; }
+    .main { max-width: 1280px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; }
+    .filter-bar { background: white; border-radius: 1.2rem; border: 1px solid var(--border); padding: 1rem 1.2rem; margin-bottom: 0.8rem; box-shadow: var(--shadow); transition: box-shadow 0.3s; }
+    .filter-bar:hover { box-shadow: var(--shadow-lg); }
+    .filter-label { font-size: 0.68rem; font-weight: 700; color: var(--slate); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.7rem; display: block; }
+    .filter-row { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+    .filter-all-btn {
+      flex-shrink: 0; padding: 0.5rem 1.3rem; border-radius: 2rem; border: 2px solid var(--border);
+      background: white; font-weight: 600; font-size: 0.82rem; cursor: pointer; color: var(--navy);
+      transition: all 0.25s; white-space: nowrap;
+    }
+    .filter-all-btn:hover { border-color: var(--primary-light); background: #f0fdf4; transform: translateY(-1px); }
+    .filter-all-btn.active { background: var(--primary); border-color: var(--primary); color: white; box-shadow: 0 3px 12px rgba(5, 150, 105, 0.3); font-weight: 700; }
+    .filter-scrollable {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      flex: 1;
+      padding-bottom: 0.25rem;
+      scrollbar-width: thin;
+      -ms-overflow-style: auto;
+      scroll-snap-type: x mandatory;
+    }
+    .filter-scrollable::-webkit-scrollbar { height: 4px; }
+    .filter-scrollable::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 10px; }
+    .filter-scrollable::-webkit-scrollbar-thumb { background: #1e6f3f; border-radius: 10px; }
+    .filter-non-scroll { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .filter-btn-scroll {
+      flex-shrink: 0;
+      padding: 0.5rem 1.1rem;
+      border-radius: 2rem;
+      border: 2px solid var(--border);
+      background: white;
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: var(--navy);
+      transition: all 0.25s;
+      white-space: nowrap;
+      scroll-snap-align: start;
+    }
+    .filter-btn-scroll:hover { border-color: var(--primary-light); background: #f0fdf4; transform: translateY(-1px); }
+    .filter-btn-scroll.active { background: var(--primary); border-color: var(--primary); color: white; box-shadow: 0 3px 12px rgba(5, 150, 105, 0.3); font-weight: 700; }
+    .filter-btn {
+      padding: 0.5rem 1.1rem;
+      border-radius: 2rem;
+      border: 2px solid var(--border);
+      background: white;
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: var(--navy);
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+    .filter-btn:hover { border-color: var(--primary-light); background: #f0fdf4; transform: translateY(-1px); }
+    .filter-btn.active { background: var(--primary); border-color: var(--primary); color: white; box-shadow: 0 3px 12px rgba(5, 150, 105, 0.3); font-weight: 700; }
+    .term-btn {
+      flex: 1; padding: 0.65rem 0.85rem; border-radius: 0.8rem; border: 2.5px solid var(--border);
+      background: white; font-weight: 700; font-size: 0.88rem; cursor: pointer; color: var(--navy);
+      transition: all 0.25s; text-align: center;
+    }
+    .term-btn:hover { border-color: var(--primary-light); background: #f0fdf4; transform: translateY(-2px); }
+    .term-btn.active { background: var(--primary); border-color: var(--primary); color: white; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.35); }
+    .term-btn.disabled { opacity: 0.5; pointer-events: none; background: #f1f5f9; }
+    .products-count { font-size: 0.95rem; color: var(--slate); font-weight: 600; margin-bottom: 1.2rem; padding: 0 0.5rem; }
+    .products-count strong { color: var(--primary); font-weight: 800; font-size: 1.2rem; }
+    .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .product-card {
+      background: white; border-radius: 1.2rem; border: 1px solid var(--border); overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.4,0,0.2,1); box-shadow: var(--shadow);
+      display: flex; flex-direction: column; cursor: pointer;
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--primary-light); }
+    .book-cover { position: relative; height: 180px; overflow: hidden; }
+    .book-cover-bg { position: absolute; inset: 0; }
+    .book-cover-art { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: transform 0.5s; }
+    .product-card:hover .book-cover-art { transform: scale(1.08); }
+    .book-cover-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(30,41,59,0.1) 0%, rgba(30,41,59,0.8) 100%); }
+    .book-cover-subject { position: absolute; top: 0.7rem; left: 0.7rem; background: var(--gold); color: var(--primary-dark); font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+    .book-cover-term { position: absolute; top: 0.7rem; right: 0.7rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(5px); color: var(--navy); font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 1.5rem; border: 1px solid rgba(255,255,255,0.3); }
+    .book-cover-grade { position: absolute; bottom: 3.5rem; left: 0.7rem; background: rgba(255,255,255,0.98); color: var(--navy); font-size: 0.68rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .book-cover-title { position: absolute; bottom: 0.7rem; left: 0.7rem; right: 0.7rem; }
+    .book-cover-title h3 { font-family: 'Playfair Display', serif; color: white; font-size: 1.05rem; font-weight: 700; line-height: 1.2; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+    .book-cover-title p { color: rgba(255,255,255,0.7); font-size: 0.72rem; margin-top: 0.15rem; }
+    .card-body { padding: 1rem 1.1rem; display: flex; flex-direction: column; flex: 1; gap: 0.8rem; }
+    .card-info { display: flex; gap: 0.65rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .card-info-item { display: flex; flex-direction: column; gap: 0.08rem; }
+    .card-info-label { font-size: 0.62rem; font-weight: 600; color: var(--slate); text-transform: uppercase; letter-spacing: 0.05em; }
+    .card-info-val { font-size: 0.82rem; font-weight: 700; color: var(--navy); }
+    .card-info-sep { width: 1px; background: var(--border); align-self: stretch; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+    .product-price { display: flex; flex-direction: column; line-height: 1; }
+    .price-label { font-size: 0.62rem; color: var(--slate); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+    .price-amount { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-top: 0.15rem; }
+    .price-currency { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; color: var(--primary); }
+    .buy-btn { background: var(--primary); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 2rem; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all 0.25s; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3); }
+    .buy-btn:hover { background: var(--primary-dark); transform: translateY(-2px) scale(1.03); box-shadow: 0 6px 20px rgba(5, 150, 105, 0.45); }
+    .buy-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .empty-state { grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; color: var(--slate); }
+    .empty-state h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .modal { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); align-items: center; justify-content: center; z-index: 500; padding: 1rem; }
+    .modal.open { display: flex; }
+    .modal-card { background: white; border-radius: 1.5rem; width: 100%; max-width: 450px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.35); animation: modalIn 0.3s cubic-bezier(0.4,0,0.2,1); }
+    @keyframes modalIn { from { opacity: 0; transform: scale(0.92) translateY(25px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .modal-header { background: var(--primary); padding: 1.5rem 1.7rem; display: flex; align-items: center; justify-content: space-between; }
+    .modal-header h2 { font-family: 'Playfair Display', serif; color: white; font-size: 1.25rem; font-weight: 700; }
+    .modal-close { width: 32px; height: 32px; background: rgba(255,255,255,0.2); border: none; border-radius: 50%; color: white; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; line-height: 1; }
+    .modal-close:hover { background: rgba(255,255,255,0.3); transform: rotate(90deg); }
+    .modal-body { padding: 1.7rem; }
+    .modal-product { display: flex; gap: 1rem; background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border-radius: 1rem; padding: 1rem; margin-bottom: 1.5rem; border: 1px solid var(--border); }
+    .modal-cover { width: 60px; height: 76px; border-radius: 0.5rem; overflow: hidden; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .modal-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-product-info { flex: 1; }
+    .modal-product-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; line-height: 1.3; }
+    .modal-product-meta { font-size: 0.75rem; color: var(--slate); display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.4rem; }
+    .modal-product-meta span { background: white; padding: 0.12rem 0.45rem; border-radius: 1.5rem; border: 1px solid var(--border); font-weight: 500; }
+    .modal-product-price { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--primary); }
+    .payment-section { margin-top: 1.3rem; }
+    .phone-field { margin-bottom: 1.1rem; }
+    .phone-field label { display: block; font-size: 0.75rem; font-weight: 700; color: var(--navy); margin-bottom: 0.45rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .phone-field input { width: 100%; padding: 0.95rem 1.1rem; border: 2.5px solid var(--border); border-radius: 0.85rem; font-size: 1rem; color: var(--navy); letter-spacing: 0.03em; transition: all 0.25s; outline: none; font-weight: 500; }
+    .phone-field input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.15); }
+    .phone-field input::placeholder { color: #cbd5e1; }
+    .pay-btn {
+      width: 100%; padding: 1.1rem; background: var(--primary); color: white; border: none;
+      border-radius: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s;
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-top: 0.5rem;
+      box-shadow: 0 6px 20px rgba(5, 150, 105, 0.35);
+    }
+    .pay-btn:hover:not(:disabled) { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(5, 150, 105, 0.45); }
+    .pay-btn:disabled { opacity: 0.65; cursor: not-allowed; }
+    .pay-btn svg { width: 22px; height: 22px; }
+    .cancel-btn { width: 100%; padding: 0.85rem; background: #f8fafc; color: var(--slate); border: 2px solid var(--border); border-radius: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; margin-top: 0.7rem; }
+    .cancel-btn:hover { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+    
+    /* Download Overlay Animations */
+    .dl-overlay { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(14px); align-items: center; justify-content: center; z-index: 700; }
+    .dl-overlay.active { display: flex; }
+    .dl-card { background: white; border-radius: 1.5rem; padding: 2.5rem 2rem; text-align: center; max-width: 340px; width: 90%; box-shadow: 0 40px 100px rgba(0,0,0,0.4); animation: slideUp 0.4s cubic-bezier(0.4,0,0.2,1); }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .dl-icon-wrap { position: relative; width: 80px; height: 80px; margin: 0 auto 1.5rem; }
+    .dl-spinner { position: absolute; inset: 0; width: 80px; height: 80px; border: 4px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
+    .dl-icon-center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .dl-arrow-svg { animation: dlBounce 1s ease-in-out infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes dlBounce { 0%, 100% { transform: translateY(-3px); } 50% { transform: translateY(3px); } }
+    .dl-word { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; color: var(--primary); letter-spacing: 0.02em; margin-bottom: 0.5rem; }
+    .dl-dots { display: flex; justify-content: center; gap: 6px; margin-bottom: 0.8rem; }
+    .dl-dots span { display: inline-block; width: 8px; height: 8px; background: var(--primary); border-radius: 50%; animation: dotPulse 1.2s ease-in-out infinite; }
+    .dl-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .dl-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes dotPulse { 0%, 80%, 100% { transform: scale(0.5); opacity: 0.38; } 40% { transform: scale(1); opacity: 1; } }
+    .dl-sub { font-size: 0.9rem; color: var(--slate); line-height: 1.6; margin-bottom: 1.2rem; }
+    .dl-progress { width: 100%; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-top: 1.2rem; }
+    .dl-progress-bar { height: 100%; background: linear-gradient(90deg, var(--primary), var(--primary-light)); border-radius: 3px; width: 0; transition: width 0.3s ease; }
+    .dl-success { display: none; }
+    .dl-check-circle { width: 80px; height: 80px; background: var(--success); border-radius: 50%; margin: 0 auto 1.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4); animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .dl-check-circle svg { width: 44px; height: 44px; stroke: #ffffff; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    @keyframes popIn { from { transform: scale(0) rotate(-45deg); } to { transform: scale(1) rotate(0deg); } }
+    .dl-success-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.4rem; }
+    .dl-success-sub { font-size: 0.85rem; color: var(--slate); line-height: 1.5; }
+    .toast-wrap { position: fixed; top: 20px; right: 1.5rem; z-index: 600; display: flex; flex-direction: column; gap: 0.6rem; pointer-events: none; }
+    .toast { background: white; border-radius: 0.85rem; padding: 0.85rem 1.1rem; display: flex; align-items: center; gap: 0.7rem; box-shadow: 0 10px 35px rgba(0,0,0,0.18); border-left: 4px solid var(--primary); max-width: 340px; pointer-events: all; animation: toastIn 0.35s cubic-bezier(0.4,0,0.2,1); font-size: 0.85rem; font-weight: 500; color: var(--navy); }
+    .toast.error { border-color: #ef4444; }
+    .toast.success { border-color: var(--success); }
+    @keyframes toastIn { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+    .feedback-modal {
+      position: fixed; bottom: 20px; right: 20px; background: white; border-radius: 16px;
+      padding: 20px; max-width: 350px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      z-index: 800; display: none; border-top: 4px solid #1e6f3f; animation: slideInUp 0.3s ease;
+    }
+    @keyframes slideInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .feedback-modal h4 { margin-bottom: 12px; color: #1e6f3f; font-size: 1rem; }
+    .feedback-modal input, .feedback-modal textarea { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; font-family: 'DM Sans', sans-serif; }
+    .feedback-modal button { background: #1e6f3f; color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: 600; transition: all 0.2s; }
+    .feedback-modal button:hover { background: #0f4f2b; }
+    .feedback-options { display: flex; gap: 10px; margin: 10px 0; flex-wrap: wrap; }
+    .feedback-options button { background: #f1f5f9; color: #1e6f3f; width: auto; padding: 8px 16px; }
+    .feedback-options button:hover { background: #e2e8f0; }
+    footer { background: var(--primary-dark); color: rgba(255,255,255,0.6); padding: 2rem; text-align: center; font-size: 0.8rem; margin-top: 3rem; }
+    footer strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+    .footer-links { display: flex; justify-content: center; gap: 1.6rem; margin-top: 0.8rem; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.75rem; transition: all 0.2s; font-weight: 500; }
+    .footer-links a:hover { color: white; transform: translateY(-1px); }
+    .whatsapp-float {
+      position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white;
+      width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer; transition: transform 0.2s; z-index: 900; text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.05); }
+    @media (max-width: 880px) { .term-btn { flex: 1; min-width: 75px; } }
+    @media (max-width: 600px) {
+      .main-header { padding: 2.5rem 1rem 3rem; }
+      .site-title { font-size: 2.5rem; }
+      .curriculum-badge { font-size: 0.62rem; padding: 0.35rem 0.9rem; }
+      .site-tagline { font-size: 1rem; }
+      .hero-quote { font-size: 0.95rem; padding: 0 1rem; }
+      .main { padding: 1.2rem 1rem 3rem; }
+      .products { grid-template-columns: 1fr; }
+      .filter-bar { padding: 0.8rem 1rem; }
+      .filter-btn, .filter-btn-scroll { padding: 0.45rem 0.9rem; font-size: 0.75rem; }
+      .filter-row { gap: 0.4rem; }
+      .filter-all-btn { padding: 0.45rem 1.1rem; font-size: 0.78rem; }
+      .modal-body { padding: 1.3rem; }
+      .toast-wrap { top: 10px; right: 10px; }
+      .whatsapp-float { bottom: 15px; right: 15px; width: 55px; height: 55px; font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div id="promoBanner" class="promo-banner" style="display: none;"><span id="bannerText"></span></div>
+
+  <div class="toast-wrap" id="toastWrap" role="region" aria-live="polite"></div>
+
+  <div class="dl-overlay" id="dlOverlay" role="dialog" aria-modal="true">
+    <div class="dl-card">
+      <div id="dlLoading">
+        <div class="dl-icon-wrap" id="dlSpinnerWrap" aria-hidden="true">
+          <div class="dl-spinner"></div>
+          <div class="dl-icon-center">
+            <i class="fas fa-sync-alt" style="color: var(--primary); font-size: 24px; opacity:0.8;"></i>
+          </div>
+        </div>
+        <div class="dl-icon-wrap" id="dlArrowWrap" style="display: none;" aria-hidden="true">
+          <svg class="dl-arrow-svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5">
+            <path d="M12 3v13M7 12l5 5 5-5"/>
+            <line x1="4" y1="20" x2="20" y2="20"/>
+          </svg>
+        </div>
+        <div class="dl-word" id="dlWord">Processing</div>
+        <div class="dl-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="dl-sub" id="dlSub">Sending STK push...</div>
+        <div class="dl-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="dl-progress-bar" id="dlBar"></div>
+        </div>
+      </div>
+      <div class="dl-success" id="dlSuccess">
+        <div class="dl-check-circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="dl-success-title">Download Complete!</div>
+        <div class="dl-success-sub">Your scheme of work has been saved to your device.</div>
+      </div>
+    </div>
+  </div>
+
+  <header class="main-header" role="banner">
+    <div class="header-content">
+      <div class="curriculum-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        CBE Curriculum 2026/2027
+      </div>
+      <h1 class="site-title">Scheme<span>Vault</span></h1>
+      <p class="site-tagline">Premium Schemes of Work for Kenyan Teachers</p>
+      <div class="header-divider"></div>
+      <p class="hero-quote">
+        Teaching is the one profession that creates all other professions. Your dedication shapes tomorrow's leaders.
+        <cite>— For every teacher making a difference</cite>
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content" class="main">
+    <div class="filters-wrapper">
+      <div class="filter-bar">
+        <span class="filter-label">Select Term</span>
+        <div class="filter-non-scroll" id="termGroup" role="tablist" aria-label="Academic terms">
+          <button class="term-btn active" data-term="1" role="tab" aria-selected="true">Term 1</button>
+          <button class="term-btn" data-term="2" role="tab" aria-selected="false">Term 2</button>
+          <button class="term-btn" data-term="3" role="tab" aria-selected="false">Term 3</button>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <span class="filter-label">Select Grade</span>
+        <div class="filter-row">
+          <button class="filter-all-btn active" data-grade="all" role="tab" aria-selected="true">All</button>
+          <div class="filter-scrollable" id="gradeGroup" role="tablist" aria-label="Grade levels"></div>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <span class="filter-label">Select Learning Area</span>
+        <div class="filter-row">
+          <button class="filter-all-btn active" data-area="all" role="tab" aria-selected="true">All</button>
+          <div class="filter-scrollable" id="learningAreaGroup" role="tablist" aria-label="Learning areas"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="products-count" id="productsCount" aria-live="polite" aria-atomic="true">Loading…</div>
+    <section aria-label="Available schemes">
+      <div id="productsContainer" class="products" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <div id="paymentModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="modalTitle">Complete Purchase</h2>
+        <button class="modal-close" id="cancelModalBtn" type="button" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-product">
+          <div class="modal-cover" id="modalCoverEl" aria-hidden="true"></div>
+          <div class="modal-product-info">
+            <div class="modal-product-title" id="modalTitleEl"></div>
+            <div class="modal-product-meta" id="modalMetaEl"></div>
+            <div class="modal-product-price" id="modalPriceEl"></div>
+          </div>
+        </div>
+        <div class="payment-section">
+          <div class="phone-field">
+            <label for="phoneInput">M-Pesa Phone Number</label>
+            <input type="tel" id="phoneInput" pattern="^0[17]\d{8}$" placeholder="07XX XXX XXX or 01XX XXX XXX" maxlength="10" inputmode="numeric" required autocomplete="tel">
+            <small style="font-size: 0.7rem; color: var(--slate); margin-top: 0.3rem; display: block;">Enter your M-Pesa registered number</small>
+          </div>
+          <button type="button" class="pay-btn" id="confirmPayBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+              <line x1="1" y1="10" x2="23" y2="10"></line>
+            </svg>
+            Pay to Download
+          </button>
+          <button class="cancel-btn" id="cancelBtnBottom" type="button">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="feedbackModal" class="feedback-modal" role="dialog" aria-modal="true">
+    <h4 id="feedbackQuestion">Do you want free exams?</h4>
+    <div id="feedbackOptions" class="feedback-options"></div>
+    <div id="whatsappField" style="display:none;">
+      <input type="tel" id="whatsappNumber" placeholder="Your WhatsApp number">
+    </div>
+    <textarea id="feedbackMessage" rows="2" placeholder="Your message..."></textarea>
+    <button id="submitFeedbackBtn" type="button">Send</button>
+    <button id="closeFeedbackBtn" type="button" style="background: #e2e8f0; color: var(--navy); margin-top: 0.5rem;">Close</button>
+  </div>
+
+  <a id="whatsappButton" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" style="display: none;"><i class="fab fa-whatsapp"></i></a>
+
+  <footer role="contentinfo">
+    <div><strong>SchemeVault</strong> — Kenya's CBE Schemes of Work Marketplace</div>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="#">About</a>
+      <a href="#">Support</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </nav>
+    <div style="margin-top:0.6rem;">© <span id="currentYear">2024</span> All rights reserved</div>
+  </footer>
+
+  <script>
+    (function() {
+      const API_BASE = 'https://schemevault-backend.onrender.com';
+      const CACHE_KEY = 'schemevault_products';
+      const SYNC_INTERVAL = 15000;
+
+      const subjectCovers = {
+        'Mathematics': 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&q=80',
+        'English': 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&q=80',
+        'Kiswahili': 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&q=80',
+        'Creative Arts': 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&q=80',
+        'Social Studies': 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=80',
+        'Integrated Science': 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?w=400&q=80',
+        'Pre-technical Studies': 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400&q=80',
+        'Agriculture': 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&q=80',
+        'default': 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&q=80'
+      };
+      
+      const subjectGrads = {
+        'Mathematics': 'linear-gradient(135deg,#667eea,#764ba2)',
+        'English': 'linear-gradient(135deg,#f093fb,#f5576c)',
+        'Kiswahili': 'linear-gradient(135deg,#4facfe,#00f2fe)',
+        'Creative Arts': 'linear-gradient(135deg,#fa709a,#fee140)',
+        'Social Studies': 'linear-gradient(135deg,#a18cd1,#fbc2eb)',
+        'Integrated Science': 'linear-gradient(135deg,#43e97b,#38f9d7)',
+        'Pre-technical Studies': 'linear-gradient(135deg,#ffecd2,#fcb69f)',
+        'Agriculture': 'linear-gradient(135deg,#ff9a9e,#fecfef)',
+        'default': 'linear-gradient(135deg,#667eea,#764ba2)'
+      };
+
+      let products = [];
+      let currentTerm = 1;
+      let currentGrade = 'all';
+      let currentArea = 'all';
+      let selectedProduct = null;
+      let isProcessing = false;
+      let termSettings = { term1: true, term2: true, term3: true };
+      let activePopup = null;
+      let syncInterval = null;
+      let cacheVersion = null;
+      let paymentCheckInterval = null;
+      let currentTransactionId = null;
+
+      const toastWrap = document.getElementById('toastWrap');
+      const gradeGroup = document.getElementById('gradeGroup');
+      const areaGroup = document.getElementById('learningAreaGroup');
+      const productsCount = document.getElementById('productsCount');
+      const productsContainer = document.getElementById('productsContainer');
+      const paymentModal = document.getElementById('paymentModal');
+      const phoneInput = document.getElementById('phoneInput');
+      const confirmPayBtn = document.getElementById('confirmPayBtn');
+      const cancelModalBtn = document.getElementById('cancelModalBtn');
+      const cancelBtnBottom = document.getElementById('cancelBtnBottom');
+      const modalTitleEl = document.getElementById('modalTitleEl');
+      const modalMetaEl = document.getElementById('modalMetaEl');
+      const modalPriceEl = document.getElementById('modalPriceEl');
+      const modalCoverEl = document.getElementById('modalCoverEl');
+      const dlOverlay = document.getElementById('dlOverlay');
+      const dlLoading = document.getElementById('dlLoading');
+      const dlSuccess = document.getElementById('dlSuccess');
+      const dlSub = document.getElementById('dlSub');
+      const dlBar = document.getElementById('dlBar');
+      const dlWord = document.getElementById('dlWord');
+      const dlSpinnerWrap = document.getElementById('dlSpinnerWrap');
+      const dlArrowWrap = document.getElementById('dlArrowWrap');
+      const feedbackModal = document.getElementById('feedbackModal');
+      const feedbackQuestion = document.getElementById('feedbackQuestion');
+      const feedbackOptions = document.getElementById('feedbackOptions');
+      const whatsappField = document.getElementById('whatsappField');
+      const whatsappNumber = document.getElementById('whatsappNumber');
+      const feedbackMessage = document.getElementById('feedbackMessage');
+      const submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
+      const closeFeedbackBtn = document.getElementById('closeFeedbackBtn');
+
+      function showToast(message, type = 'success') {
+        const toast = document.createElement('div');
+        toast.className = `toast${type === 'error' ? ' error' : type === 'success' ? ' success' : ''}`;
+        toast.setAttribute('role', 'alert');
+        toast.textContent = message;
+        toastWrap.appendChild(toast);
+        setTimeout(() => {
+          toast.style.transition = 'opacity 0.3s, transform 0.3s';
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateX(30px)';
+          setTimeout(() => toast.remove(), 320);
+        }, 4000);
+      }
+
+      async function loadBanner() {
+        try {
+          const res = await fetch(`${API_BASE}/api/banner`);
+          if (!res.ok) return;
+          const banner = await res.json();
+          if (banner.enabled && banner.text) {
+            document.getElementById('bannerText').innerText = banner.text;
+            document.getElementById('promoBanner').style.display = 'block';
+          }
+        } catch(e) {}
+      }
+
+      async function loadWhatsApp() {
+        try {
+          const res = await fetch(`${API_BASE}/api/whatsapp`);
+          if (!res.ok) return;
+          const wa = await res.json();
+          if (wa.enabled && wa.number) {
+            const url = `https://wa.me/${wa.number}?text=${encodeURIComponent(wa.message || 'Hello')}`;
+            document.getElementById('whatsappButton').href = url;
+            document.getElementById('whatsappButton').style.display = 'flex';
+          }
+        } catch(e) {}
+      }
+
+      async function loadTermSettings() {
+        try {
+          const res = await fetch(`${API_BASE}/api/settings`);
+          if (!res.ok) return;
+          termSettings = await res.json();
+          updateTermButtons();
+        } catch(e) {}
+      }
+
+      function updateTermButtons() {
+        const btns = document.querySelectorAll('.term-btn');
+        if (btns[0]) btns[0].classList.toggle('disabled', !termSettings.term1Enabled);
+        if (btns[1]) btns[1].classList.toggle('disabled', !termSettings.term2Enabled);
+        if (btns[2]) btns[2].classList.toggle('disabled', !termSettings.term3Enabled);
+        if (termSettings.defaultTerm) {
+          document.querySelectorAll('.term-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.term === termSettings.defaultTerm);
+          });
+          currentTerm = Number(termSettings.defaultTerm);
+        }
+      }
+
+      async function loadPopups() {
+        try {
+          const res = await fetch(`${API_BASE}/api/popups`);
+          if (!res.ok) return;
+          const popups = await res.json();
+          if (Array.isArray(popups) && popups.length > 0) {
+            activePopup = popups[0];
+            const trigger = activePopup.trigger || 'onload';
+            let delayMs = (activePopup.delay || 0) * (activePopup.delayUnit === 'minutes' ? 60000 : 1000);
+            activePopup._delayMs = delayMs;
+            if (trigger === 'onload') {
+              setTimeout(() => showFeedbackPopup(), delayMs);
+            } else if (trigger === 'instant') {
+              setTimeout(() => showFeedbackPopup(), delayMs);
+            }
+          }
+        } catch(e) {}
+      }
+
+      function showFeedbackPopup() {
+        if (!activePopup) return;
+        feedbackQuestion.textContent = activePopup.question || 'Tell us what you think';
+        if (activePopup.options?.length) {
+          feedbackOptions.innerHTML = activePopup.options.map(opt => 
+            `<button type="button" onclick="window.selectFeedbackOption('${opt.replace(/'/g, "\\'")}')">${opt}</button>`
+          ).join('');
+          feedbackOptions.style.display = 'flex';
+        } else {
+          feedbackOptions.style.display = 'none';
+        }
+        whatsappField.style.display = activePopup.collectWhatsapp ? 'block' : 'none';
+        feedbackMessage.value = '';
+        whatsappNumber.value = '';
+        feedbackModal.style.display = 'block';
+      }
+
+      window.selectFeedbackOption = function(option) {
+        feedbackMessage.value = option;
+        if (!activePopup?.collectWhatsapp) submitFeedback();
+      };
+
+      async function submitFeedback() {
+        const message = feedbackMessage.value.trim();
+        const whatsapp = whatsappNumber?.value?.trim() || '';
+        if (!message) { showToast('Please enter a message', 'error'); return; }
+        try {
+          await fetch(`${API_BASE}/api/submit-feedback`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message, whatsapp })
+          });
+          feedbackModal.style.display = 'none';
+          showToast('Thank you for your feedback!', 'success');
+        } catch (err) {
+          showToast('Failed to send feedback', 'error');
+        }
+      }
+
+      if (submitFeedbackBtn) submitFeedbackBtn.addEventListener('click', submitFeedback);
+      if (closeFeedbackBtn) closeFeedbackBtn.addEventListener('click', () => feedbackModal.style.display = 'none');
+
+      async function checkForUpdates() {
+        try {
+          const res = await fetch(`${API_BASE}/api/cache-version`);
+          if (!res.ok) return;
+          const data = await res.json();
+          if (cacheVersion !== null && data.version !== cacheVersion) {
+            await refreshData();
+          }
+          cacheVersion = data.version;
+        } catch(e) {}
+      }
+
+      async function refreshData() {
+        try {
+          const res = await fetch(`${API_BASE}/api/schemes`);
+          if (!res.ok) return;
+          const fresh = await res.json();
+          if (JSON.stringify(products) !== JSON.stringify(fresh)) {
+            products = fresh;
+            localStorage.setItem(CACHE_KEY, JSON.stringify(products));
+            await buildFilters();
+            renderProducts();
+            showToast('New content available!', 'success');
+          }
+        } catch(e) {}
+      }
+
+      async function fetchProducts() {
+        const cached = localStorage.getItem(CACHE_KEY);
+        if (cached) {
+          try {
+            products = JSON.parse(cached);
+            await buildFilters();
+            renderProducts();
+          } catch { localStorage.removeItem(CACHE_KEY); }
+        } else {
+          productsContainer.innerHTML = '<div class="empty-state"><h3>Loading schemes...</h3></div>';
+        }
+        await refreshData();
+        if (syncInterval) clearInterval(syncInterval);
+        syncInterval = setInterval(checkForUpdates, SYNC_INTERVAL);
+      }
+
+      async function buildFilters() {
+        try {
+          const res = await fetch(`${API_BASE}/api/grades/available`);
+          if (res.ok) {
+            const gradesData = await res.json();
+            const activeGrades = gradesData.filter(g => g.active);
+            if (gradeGroup) {
+              gradeGroup.innerHTML = activeGrades.map(g => 
+                `<button class="filter-btn-scroll" data-grade="${g.name.replace('Grade ', '')}">${g.name}</button>`
+              ).join('');
+              attachGradeFilters();
+            }
+          }
+        } catch (err) {
+          const gradeSet = new Set();
+          products.forEach(p => { const m = p.grade?.match(/\d+/); if (m) gradeSet.add(m[0]); });
+          const grades = Array.from(gradeSet).sort((a,b) => a-b);
+          if (gradeGroup && grades.length) {
+            gradeGroup.innerHTML = grades.map(g => 
+              `<button class="filter-btn-scroll" data-grade="${g}">Grade ${g}</button>`
+            ).join('');
+            attachGradeFilters();
+          }
+        }
+
+        try {
+          const res = await fetch(`${API_BASE}/api/areas`);
+          if (res.ok) {
+            const areas = await res.json();
+            if (areaGroup) {
+              areaGroup.innerHTML = areas.map(a => 
+                `<button class="filter-btn-scroll" data-area="${a.name}">${a.name}</button>`
+              ).join('');
+              attachAreaFilters();
+            }
+          }
+        } catch (err) {}
+      }
+
+      function attachGradeFilters() {
+        gradeGroup.querySelectorAll('.filter-btn-scroll').forEach(btn => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-all-btn[data-grade]').forEach(b => b.classList.remove('active'));
+            gradeGroup.querySelectorAll('.filter-btn-scroll').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentGrade = btn.dataset.grade;
+            renderProducts();
+          });
+        });
+      }
+
+      function attachAreaFilters() {
+        areaGroup.querySelectorAll('.filter-btn-scroll').forEach(btn => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-all-btn[data-area]').forEach(b => b.classList.remove('active'));
+            areaGroup.querySelectorAll('.filter-btn-scroll').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentArea = btn.dataset.area;
+            renderProducts();
+          });
+        });
+      }
+
+      function renderProducts() {
+        let filtered = products.filter(p => {
+          if (p.term !== currentTerm) return false;
+          if (currentGrade !== 'all' && p.grade !== `Grade ${currentGrade}`) return false;
+          if (currentArea !== 'all' && p.subject !== currentArea) return false;
+          return true;
+        });
+
+        productsCount.innerHTML = `<strong>${filtered.length}</strong> scheme${filtered.length !== 1 ? 's' : ''} available`;
+
+        if (!filtered.length) {
+          productsContainer.innerHTML = '<div class="empty-state"><h3>No schemes found</h3><p>Try adjusting your filters.</p></div>';
+          return;
+        }
+
+        productsContainer.innerHTML = filtered.map(p => `
+          <article class="product-card" data-id="${p.id}" tabindex="0" role="button">
+            <div class="book-cover">
+              <div class="book-cover-bg" style="background:${subjectGrads[p.subject] || subjectGrads.default}">
+                <img class="book-cover-art" src="${p.coverKey ? `${API_BASE}/api/cover/${p.id}` : (subjectCovers[p.subject] || subjectCovers.default)}" alt="${p.subject}" loading="lazy" width="400" height="180" onerror="this.style.display='none'">
+              </div>
+              <div class="book-cover-overlay"></div>
+              <div class="book-cover-subject">${escapeHtml(p.subject)}</div>
+              <div class="book-cover-term">Term ${p.term}</div>
+              <div class="book-cover-grade">${escapeHtml(p.grade)}</div>
+              <div class="book-cover-title">
+                <h3>${escapeHtml(p.title)}</h3>
+                <p>Scheme of Work</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-info">
+                <div class="card-info-item"><span class="card-info-label">Grade</span><span class="card-info-val">${escapeHtml(p.grade)}</span></div>
+                <div class="card-info-sep"></div>
+                <div class="card-info-item"><span class="card-info-label">Pages</span><span class="card-info-val">${p.pages || '—'}</span></div>
+                <div class="card-info-sep"></div>
+                <div class="card-info-item"><span class="card-info-label">Weeks</span><span class="card-info-val">${p.weeks || '—'}</span></div>
+              </div>
+              <div class="card-footer">
+                <div class="product-price">
+                  <span class="price-label">Price</span>
+                  <span class="price-amount"><span class="price-currency">KES </span>${p.price}</span>
+                </div>
+                <button class="buy-btn" data-id="${p.id}" type="button">Buy Now</button>
+              </div>
+            </div>
+          </article>
+        `).join('');
+
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => { e.stopPropagation(); openModal(btn.dataset.id); });
+        });
+        document.querySelectorAll('.product-card').forEach(card => {
+          card.addEventListener('click', () => openModal(card.dataset.id));
+        });
+      }
+
+      function openModal(productId) {
+        selectedProduct = products.find(p => p.id === productId);
+        if (!selectedProduct) return;
+        modalTitleEl.textContent = `${selectedProduct.title} — ${selectedProduct.grade}`;
+        modalMetaEl.innerHTML = `<span>${selectedProduct.grade}</span><span>Term ${selectedProduct.term}</span><span>${selectedProduct.subject}</span>`;
+        modalPriceEl.textContent = `KES ${selectedProduct.price}`;
+        modalCoverEl.style.background = subjectGrads[selectedProduct.subject] || subjectGrads.default;
+        modalCoverEl.innerHTML = `<img src="${selectedProduct.coverKey ? `${API_BASE}/api/cover/${selectedProduct.id}` : (subjectCovers[selectedProduct.subject] || subjectCovers.default)}" alt="${selectedProduct.subject}" width="60" height="76" onerror="this.style.display='none'">`;
+        paymentModal.classList.add('open');
+        phoneInput.value = '';
+        phoneInput.focus();
+      }
+
+      function closeModal() {
+        paymentModal.classList.remove('open');
+      }
+
+      function escapeHtml(s) {
+        const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+        return String(s).replace(/[&<>"']/g, m => map[m]);
+      }
+
+      // Term filter listeners
+      document.querySelectorAll('.term-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (btn.classList.contains('disabled')) return;
+          document.querySelectorAll('.term-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentTerm = Number(btn.dataset.term);
+          renderProducts();
+        });
+      });
+
+      // All grade filter
+      document.querySelector('[data-grade="all"]').addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn-scroll[data-grade]').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.filter-all-btn[data-grade]').forEach(b => b.classList.add('active'));
+        currentGrade = 'all';
+        renderProducts();
+      });
+
+      // All area filter
+      document.querySelector('[data-area="all"]').addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn-scroll[data-area]').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.filter-all-btn[data-area]').forEach(b => b.classList.add('active'));
+        currentArea = 'all';
+        renderProducts();
+      });
+
+      // ---------- FIXED PAYMENT FLOW (FAST POLLING) ----------
+      confirmPayBtn.addEventListener('click', async () => {
+        if (!selectedProduct) { showToast('Select a product', 'error'); return; }
+        const phone = phoneInput.value.trim();
+        if (!phone.match(/^0[17]\d{8}$/)) { showToast('Enter valid Safaricom number', 'error'); return; }
+        if (isProcessing) return;
+        isProcessing = true;
+        confirmPayBtn.disabled = true;
+        closeModal();
+        
+        dlOverlay.classList.add('active');
+        dlLoading.style.display = 'block';
+        dlSuccess.style.display = 'none';
+        dlSpinnerWrap.style.display = 'block';
+        dlArrowWrap.style.display = 'none';
+        dlWord.textContent = 'Processing';
+        dlSub.textContent = 'Sending STK push to your phone...';
+        dlBar.style.width = '10%';
+
+        try {
+          const res = await fetch(`${API_BASE}/api/initiate-payment`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ phone, amount: selectedProduct.price, productId: selectedProduct.id })
+          });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.error || 'Payment initiation failed');
+          
+          currentTransactionId = data.transactionId;
+          dlSub.textContent = 'STK push sent! Enter your M-Pesa PIN.';
+          dlBar.style.width = '30%';
+          
+          let pollCount = 0;
+          const MAX_POLLS = 80; // 2 minutes at 1.5s
+          
+          paymentCheckInterval = setInterval(async () => {
+            pollCount++;
+            try {
+              const statusRes = await fetch(`${API_BASE}/api/payment-status/${currentTransactionId}`);
+              const statusData = await statusRes.json();
+              
+              if (statusData.status === 'success') {
+                clearInterval(paymentCheckInterval);
+                dlSpinnerWrap.style.display = 'none';
+                dlArrowWrap.style.display = 'block';
+                dlWord.textContent = 'Downloading';
+                dlSub.textContent = 'Payment confirmed! Preparing download...';
+                dlBar.style.width = '70%';
+                
+                const dlRes = await fetch(`${API_BASE}/api/request-download`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ verificationToken: statusData.verificationToken, productId: selectedProduct.id })
+                });
+                const dlData = await dlRes.json();
+                if (!dlData.downloadToken) throw new Error('Download token missing');
+                
+                dlBar.style.width = '90%';
+                dlSub.textContent = 'Starting download...';
+                window.location.href = `${API_BASE}/api/download/${dlData.downloadToken}`;
+                
+                setTimeout(() => {
+                  dlLoading.style.display = 'none';
+                  dlSuccess.style.display = 'block';
+                  dlBar.style.width = '100%';
+                  setTimeout(() => {
+                    dlOverlay.classList.remove('active');
+                    isProcessing = false;
+                    confirmPayBtn.disabled = false;
+                    selectedProduct = null;
+                  }, 2000);
+                }, 800);
+
+                if (activePopup && activePopup.trigger === 'afterdownload') {
+                  setTimeout(() => showFeedbackPopup(), activePopup._delayMs || 0);
+                }
+              } else if (statusData.status === 'failed') {
+                clearInterval(paymentCheckInterval);
+                throw new Error(statusData.message || 'Payment failed');
+              } else if (pollCount >= MAX_POLLS) {
+                clearInterval(paymentCheckInterval);
+                throw new Error('Payment timed out. Check your phone for STK prompt.');
+              }
+            } catch (err) {
+              clearInterval(paymentCheckInterval);
+              showToast(err.message, 'error');
+              dlOverlay.classList.remove('active');
+              isProcessing = false;
+              confirmPayBtn.disabled = false;
+            }
+          }, 1500);
+        } catch (err) {
+          showToast(err.message, 'error');
+          dlOverlay.classList.remove('active');
+          isProcessing = false;
+          confirmPayBtn.disabled = false;
+        }
+      });
+
+      cancelModalBtn.addEventListener('click', closeModal);
+      cancelBtnBottom.addEventListener('click', closeModal);
+      paymentModal.addEventListener('click', (e) => { if (e.target === paymentModal) closeModal(); });
+
+      // Init
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      loadBanner();
+      loadWhatsApp();
+      loadTermSettings();
+      loadPopups();
+      fetchProducts();
+      
+      fetch(`${API_BASE}/api/track-visit`, { method: 'POST' }).catch(()=>{});
+    })();
+  </script>
+</body>
+    </html>
