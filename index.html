@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ----- YOUR ORIGINAL ELEGANT CSS (COMPLETELY UNCHANGED) ----- */
+    /* ----- ORIGINAL CSS (UNCHANGED) ----- */
     :root {
       --primary: #059669;
       --primary-dark: #064e3b;
@@ -871,7 +871,7 @@
         renderProducts();
       });
 
-      // ---------- FIXED PAYMENT FLOW (FAST POLLING) ----------
+      // ---------- FIXED PAYMENT FLOW (FAST POLLING & BLOB DOWNLOAD) ----------
       confirmPayBtn.addEventListener('click', async () => {
         if (!selectedProduct) { showToast('Select a product', 'error'); return; }
         const phone = phoneInput.value.trim();
@@ -929,8 +929,21 @@
                 if (!dlData.downloadToken) throw new Error('Download token missing');
                 
                 dlBar.style.width = '90%';
-                dlSub.textContent = 'Starting download...';
-                window.location.href = `${API_BASE}/api/download/${dlData.downloadToken}`;
+                dlSub.textContent = 'Downloading file...';
+                
+                // *** FIXED: Use fetch+blob instead of window.location.href ***
+                const fileRes = await fetch(`${API_BASE}/api/download/${dlData.downloadToken}`);
+                if (!fileRes.ok) throw new Error('Download failed');
+                const blob = await fileRes.blob();
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = selectedProduct.originalName || `${selectedProduct.title}.pdf`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                // **********************************************************
                 
                 setTimeout(() => {
                   dlLoading.style.display = 'none';
@@ -942,7 +955,7 @@
                     confirmPayBtn.disabled = false;
                     selectedProduct = null;
                   }, 2000);
-                }, 800);
+                }, 500);
 
                 if (activePopup && activePopup.trigger === 'afterdownload') {
                   setTimeout(() => showFeedbackPopup(), activePopup._delayMs || 0);
