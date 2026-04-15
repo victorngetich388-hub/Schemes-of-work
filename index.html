@@ -705,24 +705,16 @@
           const res = await fetch(`${API_BASE}/api/grades/available`);
           if (res.ok) {
             const gradesData = await res.json();
-            const activeGrades = gradesData.filter(g => g.active);
+            const activeGrades = gradesData.filter(g => g.active !== false);
             if (gradeGroup) {
               gradeGroup.innerHTML = activeGrades.map(g => 
-                `<button class="filter-btn-scroll" data-grade="${g.name.replace('Grade ', '')}">${g.name}</button>`
+                `<button class="filter-btn-scroll" data-grade="${g.name}">${g.name}</button>`
               ).join('');
               attachGradeFilters();
             }
           }
         } catch (err) {
-          const gradeSet = new Set();
-          products.forEach(p => { const m = p.grade?.match(/\d+/); if (m) gradeSet.add(m[0]); });
-          const grades = Array.from(gradeSet).sort((a,b) => a-b);
-          if (gradeGroup && grades.length) {
-            gradeGroup.innerHTML = grades.map(g => 
-              `<button class="filter-btn-scroll" data-grade="${g}">Grade ${g}</button>`
-            ).join('');
-            attachGradeFilters();
-          }
+          console.warn('Grades fetch failed, using fallback');
         }
 
         try {
@@ -766,7 +758,20 @@
       function renderProducts() {
         let filtered = products.filter(p => {
           if (p.term !== currentTerm) return false;
-          if (currentGrade !== 'all' && p.grade !== `Grade ${currentGrade}`) return false;
+          
+          if (currentGrade !== 'all') {
+            const productGrade = p.grade || '';
+            const selectedGrade = currentGrade;
+            const gradeNumber = productGrade.match(/\d+/)?.[0];
+            const selectedNumber = selectedGrade.match(/\d+/)?.[0];
+            const matches = 
+              productGrade === selectedGrade ||
+              (gradeNumber && selectedNumber && gradeNumber === selectedNumber) ||
+              productGrade.includes(selectedGrade) ||
+              selectedGrade.includes(productGrade);
+            if (!matches) return false;
+          }
+          
           if (currentArea !== 'all' && p.subject !== currentArea) return false;
           return true;
         });
@@ -842,7 +847,6 @@
         return String(s).replace(/[&<>"']/g, m => map[m]);
       }
 
-      // Term filter listeners
       document.querySelectorAll('.term-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           if (btn.classList.contains('disabled')) return;
@@ -853,7 +857,6 @@
         });
       });
 
-      // All grade filter
       document.querySelector('[data-grade="all"]').addEventListener('click', function() {
         document.querySelectorAll('.filter-btn-scroll[data-grade]').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.filter-all-btn[data-grade]').forEach(b => b.classList.add('active'));
@@ -861,7 +864,6 @@
         renderProducts();
       });
 
-      // All area filter
       document.querySelector('[data-area="all"]').addEventListener('click', function() {
         document.querySelectorAll('.filter-btn-scroll[data-area]').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.filter-all-btn[data-area]').forEach(b => b.classList.add('active'));
@@ -902,7 +904,7 @@
           dlBar.style.width = '30%';
           
           let pollCount = 0;
-          const MAX_POLLS = 80; // 2 minutes at 1.5s
+          const MAX_POLLS = 80;
           
           paymentCheckInterval = setInterval(async () => {
             pollCount++;
@@ -984,4 +986,4 @@
     })();
   </script>
 </body>
-    </html>
+</html>
